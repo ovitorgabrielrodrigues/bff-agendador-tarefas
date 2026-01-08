@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
-
 @FeignClient(name = "notificacao", url = "${notificacao.url}")
 public interface EmailClient {
 
+    @PostMapping
     void enviarEmail(@RequestBody TarefaDTOResponse dto);
 }
